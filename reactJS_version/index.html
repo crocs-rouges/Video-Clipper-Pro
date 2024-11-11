@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <title>Short Creator</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Short Creator</h1>
+
+    <!-- Input pour sélectionner un fichier vidéo à couper en plusieurs segment-->
+    <input type="file" id="file-input" style="display: none;" hidden="hidden">
+    <button type="button" id="video-file-button">Sélectionner un fichier vidéo</button>
+    <div id="video-file-view"></div>
+
+    <!-- Input pour sélectionner un fichier vidéo qui va servir d'overlay -->
+    <input type="file" id="overlay-file-input" style="display: none;" hidden="hidden">
+    <button type="button" id="overlay-file-button">Sélectionner une vidéo d'overlay</button>
+    <div id="overlay-file-view"></div>
+
+
+
+    <!-- Bouton pour sélectionner un dossier dans lequel vont etre les shorts crée -->
+    <button type="button" id="output-short-folder-button">Short folder</button>
+    <div id="short-folder-view"></div>
+
+    <!-- Input pour le nom de la vidéo finale -->
+    <input type="text" id="video-name" placeholder="Veuillez saisir le nom de la vidéo finale">
+
+    <!-- bouton qui place le Slider à un certain emplacement -->
+    <button type="button" id="30-secondes-button">30 Secondes</button>
+    <button type="button" id="1-minutes-button">1 Minute</button>
+    <button type="button" id="3-minutes-button">3 Minutes</button>
+
+    <!-- Slider pour sélectionner la durée d'un seul segment de la vidéo -->
+    <div class="slider-container">
+      <label for="duration-slider">Sélectionner la durée d'un segment :</label>
+      <input type="range" id="duration-slider" class="slider" min="5" max="600" value="5">
+      <div id="slider-value" class="slider-value">5 secondes</div>
+    </div>
+
+    <!-- Slider pour sélectionner le nombre de vidéo qui vont etre crée en simultané sur la carte graphique -->
+    <div class="slider-container"></div>
+      <label for="number-video-in-creation">Sélectionner le nombre de vidéo qui se crée en même temps :</label>
+      <input type="range" id="processus-slider" class="slider" min="1" max="10" value="1">
+      <div id="video-slider-value" class="slider-value">5 vidéo en simultanée</div>
+    </div>
+
+    <!-- Bouton pour lancer la génération des shorts -->
+    <button type="button" id="create-short-button">Lancer la génération des shorts</button>
+    
+
+    <!-- Affichage du chemin du fichier sélectionné -->
+    <div id="current-short-creation"></div>
+  </div>
+
+</body>
+
+</html>
